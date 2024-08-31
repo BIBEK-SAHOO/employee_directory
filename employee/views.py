@@ -50,7 +50,8 @@ class EmployeeSearchView(generics.ListAPIView):
     queryset = Employee.objects.all().select_related('company_id').only(
                 'first_name', 'last_name', 'contact_info', 'status',
                 'company_id__name', 'department', 'position', 'location'
-            )
+            ).order_by('id')
+    serializer_class = EmployeeSerializer
     pagination_class = EmployeePagination
 
     def list(self, request, *args, **kwargs):
@@ -68,7 +69,7 @@ class EmployeeSearchView(generics.ListAPIView):
         position = request.GET.getlist('position')
 
         # Base queryset for employees in the given company
-        employees = Employee.objects.filter(company_id=company)
+        employees = self.get_queryset().filter(company_id=company)
 
         # Apply filters
         if status:

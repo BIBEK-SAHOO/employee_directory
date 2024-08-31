@@ -33,7 +33,7 @@ class Employee(models.Model):
     LOCATION_CHOICES = [
         ('New York', 'New York'),
         ('San Francisco', 'San Francisco'),
-        ('London', 'London'),
+        ('Singapore', 'Singapore'),
         # Add other locations as needed
     ]
 
