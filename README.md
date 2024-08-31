@@ -7,9 +7,9 @@ This project is a Django-based API for searching and filtering employees within 
 - [Features](#features)
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Unit Test](#Unit Test)
-- [Rate Limiting](#Rate Limiting)
-- [API Documentation](#API Documentation)
+- [Unit Test](#unit-test)
+- [Rate Limiting](#rate-limiting)
+- [API Documentation](#api-documentation)
 
 ## Features
 
