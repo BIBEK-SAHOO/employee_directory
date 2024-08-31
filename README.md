@@ -71,3 +71,13 @@ This project is a Django-based API for searching and filtering employees within 
    ```bash
    http://localhost:8000/swagger/
    http://localhost:8000/redoc/
+   
+2. **Sample URL**:
+   ```bash
+   http://localhost:8000/api/search/?company_name=edusoft&department=sales&location=new_york&position=engineer&status=active
+   
+3. **Admin URL/Credentials**:
+   ```bash
+   http://localhost:8000/admin
+   username: admin
+   password: admin

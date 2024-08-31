@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Company(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     columns_configuration = models.JSONField(default=list, blank=True)
 
     def __str__(self):
@@ -17,23 +17,23 @@ class Employee(models.Model):
     ]
 
     DEPARTMENT_CHOICES = [
-        ('HR', 'Human Resources'),
-        ('Engineering', 'Engineering'),
-        ('Sales', 'Sales'),
+        ('hr', 'Human Resources'),
+        ('engineering', 'Engineering'),
+        ('sales', 'Sales'),
         # Add other departments as needed
     ]
 
     POSITION_CHOICES = [
-        ('Manager', 'Manager'),
-        ('Engineer', 'Engineer'),
-        ('Sales Executive', 'Sales Executive'),
+        ('manager', 'Manager'),
+        ('engineer', 'Engineer'),
+        ('sales_executive', 'Sales Executive'),
         # Add other positions as needed
     ]
 
     LOCATION_CHOICES = [
-        ('New York', 'New York'),
-        ('San Francisco', 'San Francisco'),
-        ('Singapore', 'Singapore'),
+        ('new_york', 'New York'),
+        ('san_francisco', 'San Francisco'),
+        ('singapore', 'Singapore'),
         # Add other locations as needed
     ]
 

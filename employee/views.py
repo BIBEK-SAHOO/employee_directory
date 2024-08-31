@@ -16,10 +16,10 @@ class EmployeeSearchView(generics.ListAPIView):
     pagination_class = EmployeePagination
 
     def get_queryset(self):
-        company_id = self.request.query_params.get('company_id')
+        company_name = self.request.query_params.get('company_name')
         # Get the company instance
         try:
-            company = Company.objects.get(id=company_id)
+            company = Company.objects.get(name__iexact=company_name)
         except Company.DoesNotExist:
             return Employee.objects.none()  # Return an empty queryset if company not found
 
@@ -48,9 +48,9 @@ class EmployeeSearchView(generics.ListAPIView):
 
     def list(self, request, *args, **kwargs):
         # Get the company instance again for columns configuration
-        company_id = self.request.query_params.get('company_id')
+        company_name = self.request.query_params.get('company_name')
         try:
-            company = Company.objects.get(id=company_id)
+            company = Company.objects.get(name__iexact=company_name)
         except Company.DoesNotExist:
             return Response({"error": "Company not found"}, status=status.HTTP_404_NOT_FOUND)
 
