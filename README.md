@@ -7,11 +7,9 @@ This project is a Django-based API for searching and filtering employees within 
 - [Features](#features)
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Pagination](#pagination)
-- [Contributing](#contributing)
-- [License](#license)
+- [Unit Test](#Unit Test)
+- [Rate Limiting](#Rate Limiting)
+- [API Documentation](#API Documentation)
 
 ## Features
 
@@ -55,8 +53,21 @@ This project is a Django-based API for searching and filtering employees within 
 ## Configuration
 ### Environment Variables
 
-**Create a .env file in the root directory to manage your environment-specific settings**:
+1. **Create a .env file in the root directory to manage your environment-specific settings**:
+   ```bash
+   DEBUG=True
+   SECRET_KEY=your_secret_key_here
 
-```bash
-    DEBUG=True
-    SECRET_KEY=your_secret_key_here
+## Unit Test
+1. **To run the tests, you can use pytest**: 
+   ```bash
+   pytest
+   
+## Rate Limiting
+1. **The project uses Django REST Framework throttling to implement rate limiting.**
+   
+## API Documentation
+1. **API endpoints can be viewed and interacted with using Swagger**:
+   ```bash
+   http://localhost:8000/swagger/
+   http://localhost:8000/redoc/
