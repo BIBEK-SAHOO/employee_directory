@@ -14,7 +14,7 @@ This project is a Django-based API for searching and filtering employees within 
 ## Features
 
 - **Dynamic Field Selection**: Fields included in the response are dynamically determined based on the company's column configuration.
-- **Advanced Filtering**: Filter employees by status, location, department, and position.
+- **Advanced Filtering**: Filter employees by status, location, company, department, and position.
 - **Pagination Support**: Efficiently handle large datasets with built-in pagination.
 
 ## Installation
